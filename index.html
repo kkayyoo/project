@@ -170,16 +170,16 @@
   </head>
 
   <body>
- <header>
+ <!-- <header>
      <div class="top--nav">
-         <!-- <ul>
+         <ul>
              <li><a href="#"><img src="" alt=""></a></li>
              <li><a href="#spet1"><span>1</span></a></li>
              <li><a href="#spet2"><span>2</span></a></li>
              <li><a href="#spet3"><span>3</span></a></li>
-         </ul> -->
+         </ul>
      </div>
- </header>
+ </header> -->
 
 <div class="hero">
     <div class="opacity">
@@ -187,36 +187,33 @@
           <div class="start" id="step1">
                 <div class="row">
                       <div class="col-md-12">
-                            <h1></h1>
-                            <h4></h4>
+                            <h1>Project Title</h1>
+                            <h3>Project Teaser</h3>
                       </div>
-                    <div class="col-md-4 col-sm-12">
+                    <div class="col-md-6 col-sm-12">
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Start at</span>
                             <input type="text" class="form-control" placeholder="Current Location" aria-describedby="basic-addon1">
                           </div>
                     </div>
-                    <div class="col-md-4 col-sm-12">
+                    <div class="col-md-6 col-sm-12">
                          <div class="input-group">
                            <div class="input-group-btn">
-                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Run For <span class="caret"></span></button>
-
-							  <url class="dropdown-menu">
-
-                               <li><a href="#">Location</a></li>
-                               <li><a href="#">Distance</a></li>
-                               <li><a href="#">Time</a></li>
-                               <li><a href="#">Near by</a></li>
-
-							   </url>
+                      				  <select class="select--group" style="border-radius:0;">
+                                           <option value="location">Location</option>
+                                           <option value="time">Time</option>
+                                           <option value="distance">Distance</option>
+                                           <option value="safety">Safety</option>
+                                           <option value="nearby">Near By</option>
+            							   </select>
 
                            </div><!-- /btn-group -->
                            <input type="text" class="form-control" aria-label="..." id="end-address" value="">
                          </div><!-- /input-group -->
                     </div>
-                    <div class="col-md-4 col-sm-12">
+                    <div class="col-sm-12">
                         <button class="btn btn-default start-button" id="search-button">
-                            <span>Go</span>
+                            <span>HERE WE GO</span>
                         </button>
                     </div>
                 </div>
@@ -229,9 +226,10 @@
 <div class="background">
     <div class="container">
             <div class="col-md-12">
+                <h2>Select Your Route</h2>
               <div class="map" id="step2">
                     <div class="here--map">
-                        <div id="map" style="osition:absolute; height: 600px; width:100%; background:grey" ></div>
+                        <div id="map" style="position:absolute; height: 574px; width:100%; max-width:1019px; background:grey" ></div>
                     </div>
               </div>
         </div>
