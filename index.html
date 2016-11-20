@@ -164,54 +164,45 @@
 
 .directions li span.ferry  {
   background-position:-1316px;
+}
 </style>
 
   </head>
 
   <body>
- <header>
-     <div class="top--nav">
-         <!-- <ul>
-             <li><a href="#"><img src="" alt=""></a></li>
-             <li><a href="#spet1"><span>1</span></a></li>
-             <li><a href="#spet2"><span>2</span></a></li>
-             <li><a href="#spet3"><span>3</span></a></li>
-         </ul> -->
-     </div>
- </header>
 
-<div class="hero">
+<div class="hero" id="bodybg">
     <div class="opacity">
       <div class="container">
           <div class="start" id="step1">
                 <div class="row">
                       <div class="col-md-12">
-                            <h1></h1>
-                            <h4></h4>
+                            <h1>Running Angel</h1>
+                            <h3></h3>
                       </div>
-                    <div class="col-md-4 col-sm-12">
+                    <div class="col-md-6 col-sm-12">
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Start at</span>
-                            <input type="text" class="form-control" placeholder="Current Location" aria-describedby="basic-addon1">
+                            <input type="text" class="form-control" placeholder="Current Location" aria-describedby="basic-addon1" id="start-address" value="">
                           </div>
                     </div>
-                    <div class="col-md-4 col-sm-12">
+                    <div class="col-md-6 col-sm-12">
                          <div class="input-group">
                            <div class="input-group-btn">
-                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Run For <span class="caret"></span></button>
-                             <ul class="dropdown-menu">
-                               <li><a href="#">Location</a></li>
-                               <li><a href="#">Distance</a></li>
-                               <li><a href="#">Time</a></li>
-                               <li><a href="#">Near by</a></li>
-                             </ul>
+                               <select class="select--group" style="border-radius:0;">
+                                            <option value="location">End at</option>
+                                            <option value="time">Time</option>
+                                            <option value="distance">Distance</option>
+                                            <option value="safety">Safety</option>
+                                            <option value="nearby">Near By</option>
+                           </select>
                            </div><!-- /btn-group -->
                            <input type="text" class="form-control" aria-label="..." id="end-address" value="">
                          </div><!-- /input-group -->
                     </div>
-                    <div class="col-md-4 col-sm-12">
+                    <div class="col-sm-12">
                         <button class="btn btn-default start-button" id="search-button">
-                            <span>Go</span>
+                            <span>FIND ROUTE</span>
                         </button>
                     </div>
                 </div>
@@ -226,7 +217,7 @@
             <div class="col-md-12">
               <div class="map" id="step2">
                     <div class="here--map">
-                        <div id="map" style="osition:absolute; height: 600px; width:100%; background:grey" ></div>
+                        <div id="map" style="height: 574px; width:100%; max-width: 1019px background:grey" ></div>
                     </div>
               </div>
         </div>
@@ -238,14 +229,18 @@
 
 <!--reference: https://www.sitepoint.com/build-javascript-countdown-timer-no-dependencies/-->
 <div style="position:absolute; width:49%; height:100%; background:inherit">
-  <button class="btn btn-default" id="running-start-button">
+  <button class="btn btn-default run--button" id="running-start-button">
       <span>Run!</span>
   </button>
 
   <div id="time-pannel">
-    <h1>Countdown To Send Alert to friend</h1>
+    <h1>Countdown To Send Alert to Friend</h1>
+    <div class="input-group">
+       <input type="text" class="form-control" placeholder="Contacts..." aria-describedby="basic-addon1" id="start-address" value="">
+        <span class="input-group-addon contact--button" id="basic-addon1">OPEN YOUR CONTACTS</span>
+    </div>
     <div id="clockdiv">
-      <div>
+    <div style="display: none;">
         <span class="days"></span>
         <div class="smalltext">Days</div>
       </div>

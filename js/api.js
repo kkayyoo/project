@@ -336,6 +336,51 @@ function showPosition(position) {
 	currentPositionDeferred.resolve();
 }
 
+// Get the current position
+navigator.geolocation.watchPosition(showPosition);
+
+/**
+ * Moves the map to display over current location
+ *
+ * @param  {H.Map} map      A HERE Map instance within the application
+ */
+function moveMapToCurrent(map){
+  map.setCenter(
+    {
+      lat:currentPosition.lat, 
+      lng:currentPosition.lng
+    }
+  );
+  map.setZoom(14);
+}
+
+// Move the current location in landing page
+currentPositionDeferred.done(function() {
+  moveMapToCurrent(map);
+  // Now use the map as required...
+  addMarkersToMap(map);
+});
+
+/**
+ * Adds markers to the map highlighting the locations of the captials of
+ * France, Italy, Germany, Spain and the United Kingdom.
+ *
+ * @param  {H.Map} map      A HERE Map instance within the application
+ */
+function addMarkersToMap(map) {
+  var parisMarker = new H.map.Marker({lat:47.5638056, lng:-122.295370641});
+  map.addObject(parisMarker);
+
+  var romeMarker = new H.map.Marker({lat:47.561104368, lng: -122.386778535});
+  map.addObject(romeMarker);
+
+  var berlinMarker = new H.map.Marker({lat:47.678505415, lng:-122.295168690});
+  map.addObject(berlinMarker);
+}
+
+// Now use the map as required...
+// addMarkersToMap(map);
+
 /**
  * This will be triggered when search button is hit
  */
@@ -345,7 +390,7 @@ $("#search-button").click(function() {
 	geocode(platform, endAdress);
 
 	// Get the current position
-	navigator.geolocation.watchPosition(showPosition)
+	//navigator.geolocation.watchPosition(showPosition);
 
 	// calculate the route
 	$.when( currentPositionDeferred, targetPositionDeferred).done(function() {
@@ -402,9 +447,23 @@ $('#time-pannel').hide();
 
 // Function when the start running button is hit
 $("#running-start-button").click(function() {
-	var deadline = new Date(Date.parse(new Date()) +  runningTotalTime* 1000);
+	var deadline = new Date(Date.parse(new Date()) +  0.7 * runningTotalTime * 1000);
 	initializeClock('clockdiv', deadline);
 	$('#time-pannel').show();
 });
+
+
+var bgs = [
+    "http://imagizer.imageshack.us/a/img924/2200/WPSZkU.jpg",
+    "http://imageshack.com/a/img923/6360/sNvO3F.jpg",
+  "http://imageshack.com/a/img923/2346/6u1Pae.jpg",
+   
+];
+var curbg = -1;
+window.onload = function() {
+    setInterval(function() {
+        document.getElementById("bodybg").style.background = "url('" + bgs[curbg >= bgs.length - 1 ? curbg = 0 : ++curbg] + "')";
+    }, 2000);
+};
 
 
