@@ -98,7 +98,23 @@ select {
   .start-button:hover {
     background-color: #FF4081;
     border-color: #FF4081;
-    color: #fff; }
+    color: #fff;
+    outline: none; }
+    .start-button:focus{
+    background-color: #FF4081;
+    border-color: #FF4081;
+    color: #fff;
+    outline: none;}
+    .start-button:active{
+    background-color: #FF4081;
+    border-color: #FF4081;
+    color: #fff;
+    outline: none; }
+    .start-button:active:focus{
+    background-color: #FF4081;
+    border-color: #FF4081;
+    color: #fff;
+    outline: none; }
 
 /*step2*/
 .background {
@@ -114,3 +130,38 @@ select {
   border: 3px solid #FF4081; }
 
 /*# sourceMappingURL=theme.css.map */
+
+.run--button {
+  border-color: #FF4081;
+  background-color: transparent;
+  color: #FF4081;
+  padding: 10px 60px;
+  border: 2px solid #FF4081;
+  border-radius: 28px;
+  display: block;
+  margin: 30px auto;
+  transition: all .3s ease-out; }
+  .run--button:hover{
+    background-color: #FF4081;
+    border-color: #FF4081;
+    color: #fff; }
+  .run--button:focus{
+    background-color: #FF4081;
+    border-color: #FF4081;
+    color: #fff;
+    outline: none; }
+    .run--button:active{
+    background-color: #FF4081;
+    border-color: #FF4081;
+    color: #fff;
+    outline: none; }
+    .run--button:active:focus{
+    background-color: #FF4081;
+    border-color: #FF4081;
+    color: #fff;
+    outline: none; }
+    .contact--button {
+      background-color: #FF4081;
+    border-color: #FF4081;
+    color: #fff;
+    }
